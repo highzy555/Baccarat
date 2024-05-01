@@ -27,6 +27,12 @@ bot_key = os.environ['bot']
 token = bot_key
 high()
 
+@bot.event
+async def on_ready():
+  print(f"Bot {bot.user.name} is ready!")
+  await bot.change_presence(activity=discord.Streaming(
+      name='Black Market!', url='https://www.twitch.tv/example_channel'))
+  
 @bot.command()
 async def baccarat(ctx):
     player_hand = []
