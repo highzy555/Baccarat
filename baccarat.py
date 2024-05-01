@@ -3,7 +3,6 @@ from discord.ext import commands
 import random
 from flask import Flask, render_template
 from threading import Thread
-from dotenv import load_dotenv
 app = Flask('')
 @app.route('/')
 def home():
@@ -17,7 +16,7 @@ def high():
   t.start()
 
 bot = commands.Bot(
-    command_prefix='!',
+    command_prefix='h!',
     help_command=None,
     intents=discord.Intents.all(),
     strip_after_prefix=True,
